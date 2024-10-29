@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+
+    min-width: 100vw;
+}
+
+.grid {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.square {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vh;
+    border: 2px solid black;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.row {
+    width: 100%;
+    aspect-ratio: 10/1;
+    display: flex;
+}
+
+.cell-wrapper {
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    
+    border: 1px solid black;
+    display: flex;
+    font-size: 5rem;
+
+    text-align: center;
+}
+
+button {
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 2rem;
+
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.solve-btn {
+    background-color: lightblue;
+}
+
+.solve-btn:hover {
+    background-color: blue;
+    color: white;
+}
+
+.stop-btn {
+    background-color: lightcoral;
+}
+
+.stop-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.cell[user-input="true"] {
+    background-color: lightgray;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .grid {
+        width: 100%;
+    }
+
+    input.cell {
+        border-radius: 0;
+        font-size: 6vw;
+    }
+
+    #root {
+        margin: 20px;
+    }
+}
