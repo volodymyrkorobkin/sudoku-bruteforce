@@ -4,6 +4,7 @@ class SudokuSolver{
         this.renderGrid();
 
         this.stopSignal = false;
+        this.interval = 10;
     }
 
     sleep(ms) {
@@ -149,12 +150,27 @@ class SudokuSolver{
             this.initVariables();
             this.renderGrid();
         });
-        root.appendChild(resetButton); 
+        root.appendChild(resetButton);
+
+        // Interval input
+
+        const intervalInput = document.createElement("input");
+        intervalInput.setAttribute("type", "number");
+        intervalInput.setAttribute("value", this.interval);
+        intervalInput.classList.add("interval-input");
+        intervalInput.addEventListener("input", (e) => {
+            const value = parseInt(e.target.value);
+            if (value < 0) {
+                e.target.value = 0;
+            }
+            this.interval = value;
+        });
+        root.appendChild(intervalInput);
     }
 
     async setCellValue(x, y, value){
         if (this.grid[x][y] === 0) {
-            await this.sleep(10);
+            await this.sleep(this.interval);
         }
 
         this.grid[x][y] = value;

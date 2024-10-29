@@ -55,7 +55,7 @@ body {
     text-align: center;
 }
 
-button {
+button, .interval-input  {
     margin-right: 10px;
     margin-top: 10px;
     padding: 10px;
@@ -92,6 +92,10 @@ button:hover {
 
 .cell[user-input="true"] {
     background-color: lightgray;
+}
+
+.interval-input {
+    width: 100px;
 }
 
 
